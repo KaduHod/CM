@@ -36,8 +36,9 @@ app.get('/', async(req, res)=>{
       {nome: 'Edução fisica', situação: 'Trancado'}
     ]
   }
+
   try{
-    res.sendFile(__dirname + '/views/testes.html')
+    res.sendFile(__dirname + '/views/loginPage.html')
   }catch (e){
     console.log('Erro no caminho do arquivo')
   }
@@ -46,15 +47,17 @@ app.get('/', async(req, res)=>{
 })
 app.post('/verificaLogin', async(req, res)=>{
   let query = await mongoControl('buscar', req.body.Login)
-  
-  
+
   if(query && criptografia.deCript(query.pwd) == req.body.Senha){
     res.send(query)
   }else{
     res.send('Algo de errado com a query')
-    
-  } 
 
+  }
+
+})
+app.post('/verificaRegistro', async(req, res)=>{
+  res.send('Algo com registro')
 })
 
 

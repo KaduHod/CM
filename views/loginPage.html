@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cash Manager</title>
+    <link rel="stylesheet" href="/css/first.css">
+  </head>
+  <body>
+    <div id="background" >
+      <h1 id="titulo_janela">
+        CASH MANAGER
+      </h1>
+      <div id="forms">
+        <form action="/verificaLogin" id="formLogin" method="POST">
+          <label for="login" class="login_item ">
+            <h2>Login</h2>
+            <input type="text" name="Login" id="Login" class="input_cm input" >
+          </label>
+          <label for="login" class="login_item ">
+            <h2>Senha</h2>
+            <input type="password" name="Senha"class="input_cm2 input">
+          </label>
+          <div id="container_botoes">
+              <input type="submit" class="input_botao" value="Entrar">
+              <input type="button" class="input_botao" onclick="mostrarCampoRegistrese()" value="Registre-se">
+          </div>
+        </form>
+        <form id="formReg" action="" method="POST">
+          <form id="registrar" action="">
+            <label for="UserName" class="login_item ">
+                <h2>Username</h2>
+                <input type="text" name="UserName" id="reg0" class="input_cm input" >
+            </label>
+            <label for="Email" class="login_item ">
+                <h2>Email</h2>
+                <input type="mail" name="Email" id="reg1" class="input_cm input" >
+            </label>
+            <label for="Senha" class="login_item ">
+                <h2>Senha</h2>
+                <input type="password" name="Senha" id="reg2" class="input_cm input" >
+            </label>
+            <label for="confSenha" class="login_item ">
+                <h2>Confirmação de senha</h2>
+                <input type="password" name="confSenha" id="reg3" class="input_cm input" >
+            </label>
+            <div id="container_botoes" style="margin-top: 40px;">
+                <input type="button" class="input_botao" value="Voltar para login" onclick="mostrarCampoLogin()">
+                <input type="button" class="input_botao" value="Registre-se" onclick="verificaRegistro()">
+            </div>
+        </form>
+        </form>
+      </div>
+
+    </div>
+   <script>
+      let body = document.getElementsByTagName('body')[0]
+      body.style.height = `${window.screen.height}px`
+//======================
+      function mostrarCampoLogin(){
+        let formLogin = document.getElementById("forms")
+        formLogin.style.transform = 'translateX(16%)'
+      }
+      function mostrarCampoRegistrese(){
+        let formLogin = document.getElementById("forms")
+        formLogin.style.transform = 'translateX(-30%)'
+      }
+//======================
+      let inputs = []
+
+      let caracteresEspeciais = ['@','!','#','$','%','&','*','()','_','+','-','=','<','>',';',':','?','/',']','[','}','{','}' ]
+      console.log(caracteresEspeciais)
+//======================
+      function isNumber(str){
+        return !isNaN(str)
+      }
+//======================
+
+
+//======================
+      function verificaRegistro(){
+
+        if(inputs.length == 0){
+          for(i=0; i<4;i++){// pego os inputs
+            let input = document.getElementById(`reg${[i]}`)
+            inputs.push(input)
+          }
+          validaRegistro(inputs)
+        }else{
+          validaRegistro(inputs)
+        }
+
+        function validaRegistro(arrInputs){
+          //validar Nome
+          let checkListUserName = {
+            possuiNumero: false,
+            passuiCapsLock: false,
+            possuiCaractereEspecial: false
+          }
+          //validar Email
+          let checkListEmail = {
+            arroba: false,
+            pontoDepoisDoArroba: false,
+            caracterDepoisDoPonto: false,
+            arrobaPrimeiroOuUltimo: false,
+          }
+          //validar senha
+          arrInputs.map(item =>{// itero sobre a lista de inputs a serem validados
+            let tipoInput = item.getAttribute('name')
+            console.log(tipoInput)
+            let valorDigitado = item.value
+            if(tipoInput === 'UserName'){
+              // console.log('Username')
+              // console.log(valorDigitado)
+              // console.log('----')
+              if(valorDigitado.toLowerCase() !== valorDigitado) checkListUserName.passuiCapsLock = true // se string possui caracteres em caixa alta
+              for(let i = 0; i < valorDigitado.length; i++){// verifica se string possui numero
+                if(isNumber(valorDigitado[i]) == true){
+                  checkListUserName.possuiNumero = true
+                }
+              }
+              caracteresEspeciais.map(char =>{
+                if(valorDigitado.indexOf(char) > -1){
+                  checkListUserName.possuiCaractereEspecial = true
+                }
+              })
+            }
+            if(tipoInput === 'Email'){
+              let indexArroba = false
+              let indexPontoDepoisDoArroba = false
+              for(let i = 0; i < valorDigitado.length;i++){
+                if(valorDigitado[i] === '@'){
+                  checkListEmail.arroba = true// verifica se á arroba
+                  indexArroba = i
+                }
+
+                if(indexArroba !== false){// verifico o ponto depois do arroba
+                  if(i > indexArroba + 1 && valorDigitado[i] === '.'){
+                    checkListEmail.pontoDepoisDoArroba = true
+                    indexPontoDepoisDoArroba = i
+                  }
+                }
+                if(indexPontoDepoisDoArroba !== false){// verifica caractere depois do ponto
+                  if(valorDigitado[i+1]) checkListEmail.caracterDepoisDoPonto = true
+                }
+                if(i === 0 || i === valorDigitado.length - 1) {//verifica se o arroba esta no ultimo ou primeiro indice
+                  console.log(valorDigitado[i])
+                  if(checkListUserName.arrobaPrimeiroOuUltimo == false && valorDigitado[i] !== '@' ){
+                    checkListEmail.arrobaPrimeiroOuUltimo = true
+                  }
+
+                }
+              }
+            }
+            if(tipoInput === 'Senha'){
+              // console.log('Senha')
+              // console.log(valorDigitado)
+              // console.log('----')
+            }
+            if(tipoInput === 'confSenha'){
+              // console.log('confSenha')
+              // console.log(valorDigitado)
+              // console.log('----')
+            }
+          })
+          console.log(checkListEmail)
+          console.log(checkListUserName)
+        }
+        //======================
+      }
+   </script>
+  </body>
+</html>

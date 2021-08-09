@@ -4,7 +4,6 @@ const User = require('../tipos/user')
 async function mongoControl(tipoQuery, objQuery){
     //tipo query: se será busca, insert, remove ou update
     // objQuery: objeto contendo dado a ser inserido, dado de consulta e dado atualizado
-    
     const uri_CMlocal = "mongodb://localhost/CashManager"
 
     let client = new MongoClient(uriAtlas, { useUnifiedTopology: true })
