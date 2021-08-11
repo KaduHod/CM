@@ -7,8 +7,7 @@ const bodyParser = require('body-parser')
 app.use(express.static(__dirname + '/views/public'))
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
-//app.set('views', path.join(__dirname, 'views'))
-//app.set('view engine', '')
+app.use("/static", express.static('./static/'));// para funcionar os scripts js no html
 
 app.get('/', async(req, res)=>{
   let senhaTeste = criptografia.cript('123456')
