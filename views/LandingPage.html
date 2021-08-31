@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Manager</title>
+    <link rel="stylesheet" href="/css2/all.css">
+    <link rel="stylesheet" href="/css2/botoes.css">
+    <link rel="stylesheet" href="/css2/LPheader.css">
+    <link rel="stylesheet" href="/css2/LPcard.css">
+    <link rel="stylesheet" href="/css2/titulos.css">
+    <style>
+        #img_logo{
+            width: 30px;
+            height: 30px;
+        }
+        #inputs_login_registrese_mobile{
+            display: none;
+            width: 0%;
+            height: 0%;
+        }
+
+        body{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items:center ;
+            justify-content: center;
+            background-image: url('img/foto2.jpg');
+            background-position-y: -500px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #8e0e00ad;
+
+        }
+        #background{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-size: 300% 300%;
+            background: linear-gradient(-45deg, #8e0e00ad, #1f1c18ad);
+            align-items:center ;
+            flex-direction: column;
+            animation: gradient 10s ease infinite;
+        }
+        @keyframes gradient {
+            0%{
+                background-position: 0  50%;
+            }
+            50%{
+                background-position: 100% 50%;
+                
+            }
+            100%{
+                background-position: 0 50%;
+            }
+        }
+        #conteudo_de_texto{
+            display: flex;
+            justify-self:center ;
+            height: 500px;
+            padding: 80px;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        @media (max-width: 800px){
+            body{
+                background-image: none;
+            }
+            #conteudo_de_texto{
+                display: flex;
+                justify-self:center ;
+                height: fit-content;
+                padding: 5px;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+            #sair_menu{
+                width: 50px;
+                height: 50px;
+                
+                
+                display: block;
+                position: relative;
+                top: 70px;
+                right: calc(50% - 25px);
+                left: calc(50% - 25px);
+                
+                content: '';
+                background-image: url('img/voltar-white.png');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+        @media screen and (min-width: 1200px){
+            #conteudo_de_texto{
+                padding: 40px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container_login_registrese_mobile" >
+        <div id="sair_menu" onclick="desmostrar_menu()"></div>
+        <div id="container_flex_login_registrese_mobile">
+          <form method="get" action="/login" id="label_container">
+            <input type="submit" value="Login" class="display_flex_center botao_padrao">
+            </input>
+            <input type="submit" value="Registre-se" class="display_flex_center botao_padrao">
+            </input>    
+        </form> 
+        </div>
+    </div>
+    <div id="background" >
+        <header>
+            <div id="container_menu_mobile">
+                <div id="menu_mobile" onclick="mostra_menu()">
+                    <div class="traço"></div>
+                    <div class="traço"></div>
+                    <div class="traço"></div>
+                </div>
+            </div>
+            <div id="header_logo">
+                <img src="img/walletColored.png" id="img_logo" alt="logo" style="margin-right: 10px;margin-left: 10px;">
+                <h1>Cash Manager</h1>
+            </div>
+            <div id="header_content" >
+                <h4 onclick="slider('1')">Sobre</h4>
+                <h4 onclick="slider('2')">Como funciona?</h4>
+                <div id="container_botao_display">
+                    <form method="get" action="login" id="container_botao">
+                      <input type="submit" value='Entrar'>
+                      <input type="submit" value='Registre-se'>
+                  </form>
+                </div>
+                
+            </div>
+        </header>
+        <main id="conteudo_de_texto">
+            <div class="card_text">
+                 <p id="texto">&nbsp; &nbsp;  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates adipisci dolore, expedita aspernatur voluptatum esse dicta incidunt fugiat officia sint nesciunt minima aut nulla est magnam fugit ipsa blanditiis consequuntur.loren Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid mollitia incidunt possimus ipsum vitae ex aliquam quo, dolores molestias minus dicta sapiente nulla voluptate! Dicta omnis recusandae totam possimus unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem architecto corporis eius dolorum eligendi. Quos ipsa, in beatae voluptatum cum temporibus doloribus voluptate amet harum natus totam et ullam quod.</p> 
+
+                 <div id="slider_button_container">
+                    <div class="circle circle_animation" style="background-color:rgba(255, 255, 255, 0)" onclick="slider('1')" ></div>
+                    <div class="circle circle_animation1" onclick="slider('2')"></div>
+                </div>
+            </div>
+            <div id="card_image">
+                
+
+            </div>
+        </main>
+    </div>
+    <script>
+        //alert(`${window.screen.width}x${window.screen.height}`)
+        let background_ = document.getElementById('background')  
+        let pa = document.getElementById('texto')
+        background_.style.height = `${window.screen.height}px` 
+        let circles = document.getElementsByClassName('circle')
+        let container_login_mobile = document.getElementById('container_login_registrese_mobile')
+        
+        function slider(pos){
+            circles[0].style.animation = 'none'
+            circles[1].style.animation = 'none'
+            circles[0].style.border = '1px solid white'
+            circles[1].style.border = '1px solid white'
+            let image_change_block = document.getElementById('card_image')
+            if(pos == '1'){
+                circles[0].style.backgroundColor = 'rgba(255, 255, 255)'
+                circles[1].style.backgroundColor = 'rgba(255, 255, 255, 0)'
+                image_change_block.style.backgroundImage = "url('img/business-plan.png')"
+                pa.innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates adipisci dolore, expedita aspernatur voluptatum esse dicta incidunt fugiat officia sint nesciunt minima aut nulla est magnam fugit ipsa blanditiis consequuntur.loren Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid mollitia incidunt possimus ipsum vitae ex aliquam quo, dolores molestias minus dicta sapiente nulla voluptate! Dicta omnis recusandae totam possimus unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem architecto corporis eius dolorum eligendi. Quos ipsa, in beatae voluptatum cum temporibus doloribus voluptate amet harum natus totam et ullam quod.'
+            }else{
+                image_change_block.style.backgroundImage = "url('img/finance.png')"
+                circles[1].style.backgroundColor = 'rgba(255, 255, 255)'
+                circles[0].style.backgroundColor = 'rgba(255, 255, 255, 0)'
+                
+                pa.innerHTML = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem architecto corporis eius dolorum eligendi. Quos ipsa, in beatae voluptatum cum temporibus doloribus voluptate amet harum natus totam et ullam quod, expedita aspernatur voluptatum esse dicta incidunt fugiat officia sint nesciunt minima aut nulla est magnam fugit ipsa blanditiis consequuntur.loren Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+            }
+        }
+        function mostra_menu(){            
+            container_login_mobile.style.top = '0px'
+                     
+        }
+        function desmostrar_menu(){
+            container_login_mobile.style.top = '-101%'
+        }
+    </script>
+    
+</body>
+</html>

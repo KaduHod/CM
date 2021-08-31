@@ -15,7 +15,7 @@ class User{
         listaRendas: obj.listaRendas,
         totalRenda: null
     }
-    this.estudos = obj.estudos //check
+    this.estudos = obj.estudos 
     this.fundoDeEmergencia = obj.fundoDeEmergencia
     this.planejamento = null
     this.setTotGastos()
@@ -27,14 +27,6 @@ class User{
     let fundoNecessario = this.gastos.totalEssencial * 6
     let porcentagemParaGastosEssenciais = (100*this.gastos.totalEssencial)/this.rendas.totalRenda
     let rendaSemEssencial = this.rendas.totalRenda - this.gastos.totalEssencial
-    // console.log('Fundo de emergência necessário:' ,fundoNecessario)
-    // if(porcentagemParaGastosEssenciais < 50){
-    //   console.log('Porcentagem da renda para cobrir gastos essenciais: ', parseInt(porcentagemParaGastosEssenciais) + '%')
-    // } else {
-    //   console.log('Porcentagem da renda para cobrir gastos essenciais: ', parseInt(porcentagemParaGastosEssenciais) + '%')
-    //   console.log('Perigo, seus gastos não podem ser mais do que 50% do total de sua renda!')
-    // }
-    // console.log('Renda descontada dos gastos essenciais: ', rendaSemEssencial)
     if(this.fundoDeEmergencia < this.gastos.totalEssencial * 6){
       this.planejamento = {
         Essencial: this.gastos.totalEssencial,
@@ -84,5 +76,29 @@ class User{
     }
   }
 }
+let req_ = {
+  nome: 'Carlos Alberto Ribas Junior',
+  login: 'KaduHod',
+  pwd: '123456',
+  mail: 'carlos@mail.com',
+  listaGastos: [
+    {nome:'Computador' , valor: 2868, essencial: false },
+    {nome: 'CNH', valor: 2100, essencial: false},
+    {nome: 'Água e luz', valor: 180, essencial: true},
+    {nome: 'Puc-pr', valor: 410, essencial: true},
+    {nome: 'Internet', valor: 270, essencial: true},
+    {nome: 'Mercado', valor: 500, essencial: true},
+  ],
+  fundoDeEmergencia: 100,
+  listaRendas: [
+    {nome: 'Studio N Fit',valor: 600},
+    {nome: 'Axie infinity',valor: 2000}
+  ],
+  estudos: [
+    {nome: 'Ánalise e desenvolvimento de sistemas', situação: 'Cursando'},
+    {nome: 'Edução fisica', situação: 'Trancado'}
+  ]
+}
 
+console.log(new User(req_))
 module.exports = User

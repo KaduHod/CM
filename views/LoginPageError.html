@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cash Manager</title>
+    <link rel="stylesheet" href="/css/first.css">
+    
+  </head>
+  <body>
+    <div id="background" >
+      <h1 id="titulo_janela">
+        CASH MANAGER
+      </h1>
+      <div id="forms">
+        <form action="/verificaLogin" id="formLogin" method="POST">
+          <label for="login" class="login_item ">
+            <h2>Login</h2>
+            <input type="text" name="Login" id="Login" class="input_cm input" >
+          </label>
+          <label for="login" class="login_item ">
+            <h2>Senha</h2>
+            <input type="password" name="Senha"class="input_cm2 input">
+          </label>
+          <div id="container_botoes">
+              <input type="submit" class="input_botao" value="Entrar" onclick="consultaLogin()">
+              <input type="button" class="input_botao" onclick="mostrarCampoRegistrese()" value="Registre-se">
+          </div>
+        </form>
+        <form id="formReg" action="" method="POST">
+          <form id="registrar" action="">
+            <label for="UserName" class="login_item ">
+                <h2>Username</h2>
+                <input type="text" name="UserName" id="reg0" class="input_cm input" >
+            </label>
+            <label for="Email" class="login_item ">
+                <h2>Email</h2>
+                <input type="mail" name="Email" id="reg1" class="input_cm input" >
+            </label>
+            <label for="Senha" class="login_item ">
+                <h2>Senha</h2>
+                <input type="password" name="Senha" id="reg2" class="input_cm input" >
+            </label>
+            <label for="confSenha" class="login_item ">
+                <h2>Confirmação de senha</h2>
+                <input type="password" name="confSenha" id="reg3" class="input_cm input" >
+            </label>
+            <div id="container_botoes" style="margin-top: 40px;">
+                <input type="button" class="input_botao" value="Voltar para login" onclick="mostrarCampoLogin()">
+                <input type="button" class="input_botao" value="Registre-se" onclick="verificaRegistro()">
+            </div>
+          </form>
+        </form>
+      </div>
+      <div id="erros"> 
+        <div id="errosFlex">
+        
+        </div>
+      </div>
+    </div>
+    <script src="/js/validaRegistro.js"></script>
+    <script>
+      if(window.screen.height < 790) document.getElementById('erros').style.right = '-101%'
+      else document.getElementById('erros').style.bottom = '-101%'
+      
+      alert('Usúario não encontrado ou senha incorreta! \n Tente novamente.')
+    </script>
+  </body>
+</html>

@@ -5,7 +5,7 @@ async function mongoControl(tipoQuery, objQuery){
     //tipo query: se será busca, insert, remove ou update
     // objQuery: objeto contendo dado a ser inserido, dado de consulta e dado atualizado
     const uri_CMlocal = "mongodb://localhost/CashManager"
-    
+    const uriAtlas = 'mongodb+srv://atlasKadu:P4MBNqZbEkEYtmR@cm.ulyqf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
     let client = new MongoClient(uriAtlas, { useUnifiedTopology: true })
     try{
@@ -27,7 +27,6 @@ async function mongoControl(tipoQuery, objQuery){
                 break;
             case 'buscar':
                 let query = await searchUser(client, objQuery)
-                console.log(objQuery)
                 return query
                 break;
             default:
