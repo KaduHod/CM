@@ -100,5 +100,5 @@ let req_ = {
   ]
 }
 
-console.log(new User(req_))
+
 module.exports = User

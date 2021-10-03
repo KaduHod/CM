@@ -1,0 +1,91 @@
+
+#mobileMenu{
+    display: block;
+    width: 30px;
+    height: 30px;
+    
+    position: absolute;
+    right: -55px;
+    transition: 200ms;
+}
+#menuMobileFlex{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    
+    width: 100%;
+    height: 100%;
+}
+header{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    
+    background-color:var(--vermelho);
+    align-items: center;
+    transform: translatey(-101vh);
+    animation: header 400ms cubic-bezier(0.86, 0, 0.07, 1) 100ms forwards;
+}
+@keyframes header {
+    to{
+        transform: translatey(0);
+        z-index: 2;
+    }
+}
+header h1{
+    font-family: 'Titulo2';
+    font-weight: bolder ;
+    font-size: 1.6em ;
+    justify-self: flex-start;
+    margin-left: 80px;
+    color: white;
+    z-index: 2;
+}
+
+
+.tituloPrincipal{
+    
+    font-family: 'Titulo2';
+    font-weight: bolder ;
+    font-size: 1.6em 
+}
+.tituloAuxiliar{
+    font-family: 'Titulo2';
+    font-weight: normal;
+    font-size: 1.1071em;
+    
+}
+.traço{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+}
+.traço2{
+    display: block;
+    position: relative;
+    width: 80%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 1000px) {
+    
+    #mobileMenu{
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 20px;
+        transition: 200ms;
+    }
+    #menuItems{
+        display: none;
+        width: 0px;
+        height: 0%;  
+        border: 1px solid rgba(151, 26, 26, 0);
+        margin-right: 30px;
+    }
+}
