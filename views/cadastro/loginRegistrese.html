@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cash Manager</title>
+    <link rel="stylesheet" href="css/RegistroLogin/card.css">
+    <link rel="stylesheet" href="css/botao.css">
     <style>
         @font-face {
             font-family: Titulo;
@@ -16,7 +18,7 @@
             --vermelho:#87363e;
             --vermelhoTranparente:#8a1824e7;
             --vermelhoMaisEscuro:#572328;
-            --vermelhoMaisEscuroTransparente:#331417d0;
+            --vermelhoMaisEscuroTransparente:#331417ea;
             --fontePadrao: 'titulo2';
         }
        
@@ -24,14 +26,111 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'titulo2';
             
         }
         body{
+            
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            /* background-image: url('img/desingPNG.png'); */
+            background-attachment: fixed;
             background-color: var(--vermelhoMaisEscuroTransparente);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }        
+        @media screen and (max-width:700px) {
+            #card{
+                display: flex;
+                flex-direction: column;
+            }
+            #Login{
+                border-right: 0px solid rgb(138, 138, 138);
+                border-bottom: 1px solid rgb(138, 138, 138);
+            }
+            #card{
+                width: 100%;
+                height: 100%;
+            }
+            .h3EmBaixo{
+                transform: translateY(-30px);
+                font-size: 17px;
+            }
+            .cardItem{
+                               
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+            #Login{
+                flex: 0.45;
+                
+            }
+            #Registro{
+                flex: 0.55;
+                
+            }
         }
     </style>
 </head>
 <body>
-    Pagina de Login e Registro
+    <div id="card">
+        
+        <form action="" class="cardItem" id="Login">
+            <h1>LOGIN</h1>
+            <label for="">
+                <h3 id="UsernameLog">Nome de usúario</h3>
+                <input id="UsernameLogbut" type="text">
+            </label>
+            <label for="">
+                <h3 id="SenhaLog">Senha</h3>
+                <input id="SenhaLogbut" type="password">
+            </label>
+            <button class="botao" type="submit"><img src="img/user.png" alt=""><h4>Login</h4> </button>
+        </form>
+        <form action="" class="cardItem" id="Registro">
+            <h1>CADASTRO</h1>
+            <label for="">
+                <h3 id="UsernameReg">Nome de usúario</h3>
+                <input id="UsernameRegbut" type="text">
+            </label>
+            <label for="">
+                <h3 id="EmailReg">Email</h3>
+                <input id="EmailRegbut"type="mail">
+            </label>
+            <label for="">
+                <h3 id="SenhaReg">Senha</h3>
+                <input id="SenhaRegbut" type="password">
+            </label>
+            <label for="">
+                <h3 id="ConfSenhaReg">Confimação de senha</h3>
+                <input id="ConfSenhaRegbut" type="password">
+            </label>
+            <button class="botao" type="submit"><img src="img/register.png" alt=""> <h4 class="tituloBotao"> Cadastre-se</h4></button>
+        </div>
+    </div>
+    <script>
+        function eventos(){
+            let todosh3 = document.getElementsByTagName('h3')
+            var arr = [].slice.call(todosh3);
+            console.log(arr)
+            arr.forEach(el => {
+                el.addEventListener('click',()=>{
+                    animacaoh3(`${el.id}`)
+                },false)
+            }); 
+        }
+        eventos()
+        function animacaoh3(idH3){
+            document.getElementById(idH3).setAttribute('class','h3EmBaixo')
+            document.getElementById(idH3+'but').focus()
+            
+        }
+    </script>
 </body>
 </html>

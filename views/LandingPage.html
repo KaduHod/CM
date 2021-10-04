@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/MiddleContent.css">
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/botao.css">
     <title>Cash Manager</title>
     <style>
         
@@ -20,7 +21,7 @@
             --vermelho:#87363e;
             --vermelhoTranparente:#8a1824e7;
             --vermelhoMaisEscuro:#572328;
-            --vermelhoMaisEscuroTransparente:#331417d0;
+            --vermelhoMaisEscuroTransparente:#331417ea;
             --fontePadrao: 'titulo2';
         }
        
@@ -48,6 +49,7 @@
             background-repeat: no-repeat;
             background-size:contain 100vh ;
             background-attachment: fixed;
+            
             z-index: 0;
         }
         body::before{
@@ -71,29 +73,7 @@
             content: '';
             right: -40vw;
         }
-        .botao{
-            margin-right: 5px;
-            margin-left: 5px;
-            text-decoration: none;
-            color: white;
-            font-family: var(--fontePadrao);
-            background-color: rgba(0, 0, 0, 0.692);
-            width: 150px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.527);
-            border-radius: 4px;
-            transition:100ms;
-        }
         
-       
-        .botao:focus{
-            box-shadow: 0 0 0 0;
-            outline: 0;
-        }
         @keyframes backgroundColor {
             to{
                 background-color: var(--vermelhoMaisEscuroTransparente);
@@ -313,11 +293,11 @@
             <form action='/CadastroLogin' method="get" id="MiddleContentButtons">
                
                 <label for="">  
-                    <button class="botao" type="submit">Login</button>
+                    <button class="botao" type="submit"><img src="img/enter.png" alt=""><h4>Entrar</h4> </button>
                 </label>
-                <label for="">
+                <!-- <label for="">
                     <button class="botao" type="submit" >Registre-se</button>
-                </label>
+                </label> -->
 
                 
                 <!-- <a class="botao" href="">Login</a>
