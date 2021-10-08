@@ -8,7 +8,7 @@ class User{
       listaGastos: obj.listaGastos,
       totalGastos: null,
       totalEssencial:null,
-      totalTorra: null
+      totMensal: null
 
     }
     this.rendas = {
@@ -50,8 +50,9 @@ class User{
         totGasto += item.valor
         if(item.essencial){
           this.gastos.totalEssencial += item.valor
-        }else{
-          this.gastos.totalTorra += item.valor
+        }
+        if(item.mensal){
+          this.gastos.totMensal += item.valor
         }
       });
       this.gastos.totalGastos = totGasto
@@ -59,6 +60,7 @@ class User{
       this.gastos.totalGastos = this.gastos.listaGastos.valor
       if(this.gastos.listaGastos.essencial) this.gastos.totEssencial = this.gastos.listaGastos.valor
       if(!this.gastos.listaGastos.essencial) this.gastos.totTorra = this.gastos.listaGastos.valor
+      if(this.gastos.listaGastos.mensal) this.gastos.totMensal = this.gastos.listaGastos.valor
     }
   }
   setTotRenda(){
@@ -82,23 +84,38 @@ let req_ = {
   pwd: '123456',
   mail: 'carlos@mail.com',
   listaGastos: [
-    {nome:'Computador' , valor: 2868, essencial: false },
-    {nome: 'CNH', valor: 2100, essencial: false},
-    {nome: 'Água e luz', valor: 180, essencial: true},
-    {nome: 'Puc-pr', valor: 410, essencial: true},
-    {nome: 'Internet', valor: 270, essencial: true},
-    {nome: 'Mercado', valor: 500, essencial: true},
+    {nome:'Mesada Pai' , valor: 200, essencial: true, mensal: true },
+    {nome:'Mesada Mãe' , valor: 200, essencial: false, mensal: true },
+    {nome:'Namorada' , valor: 200, essencial: false, mensal: true },
+    {nome: 'CNH', valor: 3500, essencial: false, mensal: false},
+    {nome: 'Água e luz', valor: 180, essencial: true, mensal: true},
+    {nome: 'Puc-pr', valor: 410, essencial: true, mensal: true},
+    {nome: 'Internet', valor: 270, essencial: true, mensal: true},
+    {nome: 'Imposto', valor: 155, essencial: true, mensal: true},
   ],
-  fundoDeEmergencia: 100,
+  fundoDeEmergencia: 000,
   listaRendas: [
     {nome: 'Studio N Fit',valor: 600},
     {nome: 'Axie infinity',valor: 2000}
   ],
   estudos: [
-    {nome: 'Ánalise e desenvolvimento de sistemas', situação: 'Cursando'},
-    {nome: 'Edução fisica', situação: 'Trancado'}
+    {nome: 'Ánalise e desenvolvimento de sistemas', situação: false},
+    {nome: 'Edução fisica', situação: true}
   ]
 }
-
+ /* let new_user = new User(req_)
+ console.log('========\n \n \n')
+console.log('Nome: ' + new_user.nome + '\n' +"Login: "+ new_user.login + '\n' +'Senha: ' + new_user.pwd + '\n' +'Email: '+ new_user.mail)
+console.log('User campos \n')
+console.log(new_user.rendas)
+console.log('========\n')
+console.log(new_user.gastos)
+console.log('========\n')
+console.log(new_user.estudos) 
+console.log('========\n')
+console.log(new_user.planejamento) 
+console.log('========\n')
+console.log(new_user.fundoDeEmergencia) 
+ */
 
 module.exports = User

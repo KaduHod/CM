@@ -50,7 +50,7 @@ async function removeUser(client, dadoConsulta){
   console.log(result)
 }
 
-async function updateUser(client, nomeConsulta ,dadoAtualizado){
+async function updateUser(client, nomeConsulta, dadoAtualizado){
   let result = await client.db("CashManager").collection('Users').updateOne({nome: nomeConsulta },{$set: dadoAtualizado})
   console.log(result)
 }

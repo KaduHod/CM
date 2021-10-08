@@ -7,6 +7,7 @@
     <title>Cash Manager</title>
     <link rel="stylesheet" href="css/RegistroLogin/card.css">
     <link rel="stylesheet" href="css/botao.css">
+    <link rel="stylesheet" href="css/vars.css">
     <style>
         @font-face {
             font-family: Titulo;
@@ -14,12 +15,9 @@
             font-family: Titulo2;
             src: url('css/Fontes/Ubuntu-Light.ttf') format('opentype');
         }
-        :root{
-            --vermelho:#87363e;
-            --vermelhoTranparente:#8a1824e7;
-            --vermelhoMaisEscuro:#572328;
-            --vermelhoMaisEscuroTransparente:#331417ea;
-            --fontePadrao: 'titulo2';
+        
+        html{
+            /* overflow:hidden ; */
         }
        
         *{
@@ -30,32 +28,49 @@
             
         }
         body{
-            
+            overflow:hidden ;
             display: flex;
             width: 100vw;
             height: 100vh;
             align-items: center;
             justify-content: center;
-            /* background-image: url('img/desingPNG.png'); */
+            
             background-attachment: fixed;
-            background-color: var(--vermelhoMaisEscuroTransparente);
+            /* background-color: var(--vermelhoMaisEscuroTransparente);
+             */
+             background-image: url('img/bcNovoLayout.jpg'); 
+            
+            
             background-repeat: no-repeat;
             background-size: cover;
+            z-index: 2;
 
         }        
+        /* body::after{
+            display: block;
+            position: absolute;
+            content: '';
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--vermelhoMaisEscuroTransparente);
+            left: 0;
+            z-index: 1;
+
+        } */
+        
         @media screen and (max-width:700px) {
             #card{
                 display: flex;
                 flex-direction: column;
+                width: 100%;
+                height: 100%;
+                border-radius: 0px;
             }
             #Login{
                 border-right: 0px solid rgb(138, 138, 138);
                 border-bottom: 1px solid rgb(138, 138, 138);
             }
-            #card{
-                width: 100%;
-                height: 100%;
-            }
+            
             .h3EmBaixo{
                 transform: translateY(-30px);
                 font-size: 17px;
@@ -81,44 +96,55 @@
 <body>
     <div id="card">
         
-        <form action="" class="cardItem" id="Login">
-            <h1>LOGIN</h1>
+        <form action="/Dashboard" method='post' class="cardItem" id="Login">
+            <label id="labelTituloEsq" for="">
+                <h1>LOGIN</h1>
+            </label>
+            
             <label for="">
                 <h3 id="UsernameLog">Nome de usúario</h3>
-                <input id="UsernameLogbut" type="text">
+                <input id="UsernameLogbut" name='username' autocomplete="off" type="text">
             </label>
             <label for="">
                 <h3 id="SenhaLog">Senha</h3>
-                <input id="SenhaLogbut" type="password">
+                <input id="SenhaLogbut" name='senha' autocomplete="off" type="password">
             </label>
-            <button class="botao" type="submit"><img src="img/user.png" alt=""><h4>Login</h4> </button>
+            <label for="">
+                <button id="esqBotao" class="botao" type="submit"><img src="img/user.png" alt=""><h4>Login</h4> </button>
+            </label>
+            
         </form>
-        <form action="" class="cardItem" id="Registro">
-            <h1>CADASTRO</h1>
+        <form action="/CadastroLogin/NovoUser" method='post' class="cardItem" id="Registro">
+            <label id="labelTituloDir" for="">
+                <h1>CADASTRO</h1>
+            </label>
+            
             <label for="">
                 <h3 id="UsernameReg">Nome de usúario</h3>
-                <input id="UsernameRegbut" type="text">
+                <input id="UsernameRegbut" name='username' autocomplete="off" type="text">
             </label>
             <label for="">
                 <h3 id="EmailReg">Email</h3>
-                <input id="EmailRegbut"type="mail">
+                <input id="EmailRegbut" name='email' autocomplete="off" type="mail">
             </label>
             <label for="">
                 <h3 id="SenhaReg">Senha</h3>
-                <input id="SenhaRegbut" type="password">
+                <input id="SenhaRegbut" name='senha' autocomplete="off" type="password">
             </label>
             <label for="">
                 <h3 id="ConfSenhaReg">Confimação de senha</h3>
-                <input id="ConfSenhaRegbut" type="password">
+                <input id="ConfSenhaRegbut" name='confirmacaosenha' autocomplete="off" type="password">
             </label>
-            <button class="botao" type="submit"><img src="img/register.png" alt=""> <h4 class="tituloBotao"> Cadastre-se</h4></button>
+            <label for="">
+                <button id="dirBotao" class="botao" type="submit"><img src="img/register.png" alt=""> <h4 class="tituloBotao"> Cadastre-se</h4></button>
+            </label>
+            
         </div>
     </div>
     <script>
         function eventos(){
             let todosh3 = document.getElementsByTagName('h3')
             var arr = [].slice.call(todosh3);
-            console.log(arr)
             arr.forEach(el => {
                 el.addEventListener('click',()=>{
                     animacaoh3(`${el.id}`)
@@ -132,5 +158,6 @@
             
         }
     </script>
+    <script src="js/LoginRegistrese/tempoDeAnimacao.js"></script>
 </body>
 </html>
