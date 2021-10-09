@@ -1,0 +1,228 @@
+
+        @font-face {
+            font-family: Titulo;
+            src: url('../Fontes/Ubuntu-Bold.ttf') format('opentype');
+            font-family: Titulo2;
+            src: url('../Fontes/Ubuntu-Light.ttf') format('opentype');
+        }
+        
+       
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        html{
+            overflow-y: hidden;
+            overflow-x: hidden;
+            max-height: 100vh;
+        }
+        body{
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            max-height: 100vh;
+            max-width: 100vw;
+            padding: 0px 0px 0px 0px;
+            background-image: url('../../img/bcNovoLayout.jpg');
+            background-position: 0px 00px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-size:contain 100vh ;
+            background-attachment: fixed;
+            
+            z-index: 0;
+        }
+        body::before{
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0);
+
+            left: 0;
+            position: absolute;
+            content: '';
+            z-index: 1;
+            animation: backgroundColor 400ms linear 100ms forwards;
+        }
+        body::after{
+            display: block;
+            position: absolute;
+            width: 40vw;
+            height: 100vh;
+            background-color: green;
+            content: '';
+            right: -40vw;
+        }
+        
+        @keyframes backgroundColor {
+            to{
+                /* background-color: var(--vermelhoMaisEscuroTransparente); */
+                background-color: var(--laranjaEscuro);
+            }
+        }
+        
+
+        @media screen and (max-width: 800px) {
+            #MiddleContentButtons{
+            
+                width: 80%;
+                padding-top: 30px;
+                height: fit-content;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            } 
+            #MiddleContent{
+                width: 85%;
+                height: 90vh;
+                
+                display: flex;
+                transform: translateY(150%);
+                animation: middleContent 600ms cubic-bezier(0.77, 0, 0.175, 1.2) 400ms forwards;
+                flex-direction: column;
+                align-items: center;
+            }
+            #MiddleContentLogo img{
+                width: 150px;
+                height: 150px;
+            }
+            #MiddleContentText{
+                background-color: var(--vermelhoTranparente);
+                font-family: var(--fontePadrao);
+                box-sizing: border-box;
+                width: 100%;
+                height: fit-content;
+                padding: 10px 5px 10px 5px;
+                text-align: center;
+                color: white;
+            }
+            
+        }
+        @media screen and (max-width: 460px) {
+            #MiddleContent{
+                width: 90%;
+                height: 90vh;
+                
+                display: flex;
+                transform: translateX(150%);
+                animation: middleContent 600ms cubic-bezier(0.77, 0, 0.175, 1.2) 400ms forwards;
+                flex-direction: column;
+                align-items: center;
+            }
+            #MiddleContentTittle h1{
+            
+                font-size: 20px;
+            
+            }
+            #MiddleContentText{
+                font-size: 14px;
+                text-align: center;
+            }
+            span{
+                font-size: 30px;
+            }
+            #MiddleContentLogo img{
+                width: 150px;
+                height: 150px;
+            }
+            #MiddleContentButtons{
+            
+                width: 70%;
+                padding-top: 30px;
+                height: fit-content;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+            }
+            
+            
+            header h1{
+                margin-left: 40px;
+            }
+        }
+        
+        @media screen and (max-width: 1000px) {
+            body{
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                width: 100vw;
+
+                padding: 0px 0px 0px 0px;
+                background-image: url('../../img/bcNovoLayoutMedio.jpg');
+                background-position: 0px 0vh;
+                /* background-size: 100% 100vh; */
+                background-size: cover;
+                
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                
+            }
+            #MiddleContentLogo img{
+                width: 200px;
+                height: 200px;
+            }
+        }
+        @media screen and (max-width: 640px) {
+            body{
+                background-image: url('../../img/bcNovoLayoutTelaPequena2.jpg');
+                background-size:cover;
+            }
+            #MiddleContentLogo img{
+                width: 319.41px;
+                height: 221.7px;
+            } 
+        }
+        @media screen and (max-width: 1000px) {
+            #menuItems{
+                display: none;
+                color: rgba(255, 255, 255, 0);
+            }
+        }
+        #TextoMiddleContent{
+            transition: 100ms;
+        }
+        @media screen and (max-width: 1300px) {
+            body{
+                background-image: url('../../img/bcNovoLayoutMedio.jpg');
+            }
+        }
+        @media screen and ( max-height:1024px), (min-width: 1200px) {
+            #MiddleContentText{
+                background-color: var(--vermelhoTranparente);
+                font-family: var(--fontePadrao);
+                box-sizing: border-box;
+                width: 100%;
+                height: fit-content;
+                padding: 15px 20px 15px 20px;
+                text-align: center;
+                color: white;
+            }
+            #MiddleContentLogo img{
+                width: 224.9px;
+                height: 155.1px;
+            } 
+            
+            #MiddleContentButtons a{
+                text-decoration: none;
+                color: white;
+                font-family: var(--fontePadrao);
+                background-color: rgba(0, 0, 0, 0.692);
+                width: 150px;
+                height: 40px;
+                display: flex;
+                
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                border: 1px solid rgba(255, 255, 255, 0.527);
+                border-radius: 4px;
+                transition:100ms;
+            }
+        }
+        
+        
+   

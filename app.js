@@ -1,9 +1,10 @@
 const express = require('express')
-const mongoControl = require('./back-end/db/clients')
+const mongoControl = require('./back-end/db//mongoDb/clients')
 const criptografia = require('./back-end/cript/crypto')
 const app = express()
 const bodyParser = require('body-parser')
 const path = require('path')
+const handlebars = require('express-handlebars')
 
 //ROTAS
   const CadastroLogin = require('./routes/CadastroLogin')
@@ -16,8 +17,12 @@ const path = require('path')
 
   // view engine setup
     app.set('views', path.join(__dirname, 'views'));
-    app.engine('html', require('ejs').renderFile);
-    app.set('view engine', 'html');
+    // app.engine('html', require('ejs').renderFile);
+    //app.engine('handlebars',handlebars())
+    app.engine('handlebars', handlebars({defaultLayout: 'main'}))
+    app.set('view engine', 'handlebars');
+    
+    
 
 app.get('/', async(req, res)=>{
   let senhaTeste = criptografia.cript('123456')
@@ -50,7 +55,8 @@ app.get('/', async(req, res)=>{
   } */
 
   try{
-    res.sendFile(__dirname + '/views/landingPage.html')
+    
+    res.render('home');
   }catch (e){
     console.log(e)
   }

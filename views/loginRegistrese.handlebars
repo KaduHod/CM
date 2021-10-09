@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="css/RegistroLogin/card.css">
+<link rel="stylesheet" href="css/botao.css">
+<link rel="stylesheet" href="css/vars.css">
+<link rel="stylesheet" href="css/RegistroLogin/screen.css">
+<div id="card">
+        <form action="/Dashboard" method='post' class="cardItem" id="Login">
+            <label id="labelTituloEsq" for="">
+                <h1>LOGIN</h1>
+            </label>
+            
+            <label for="">
+                <h3 id="UsernameLog">Nome de usúario</h3>
+                <input id="UsernameLogbut" name='username' class="logInput" autocomplete="off" type="text">
+            </label>
+            <label for="">
+                <h3 id="SenhaLog">Senha</h3>
+                <input id="SenhaLogbut" name='senha' class="logInput" autocomplete="off" type="password">
+            </label>
+            <label for="">
+                <button id="esqBotao" class="botao" type="submit"><img src="img/user.png" alt=""><h4>Login</h4> </button>
+            </label>
+            
+        </form>
+        <form action="CadastroLogin/NovoUser" method='post' class="cardItem" id="Registro">
+            <label id="labelTituloDir" for="">
+                <h1>CADASTRO</h1>
+            </label>
+            <label for="">
+                <h3 id="UsernameReg">Nome de usúario</h3>
+                <input id="UsernameRegbut" class="regInput" name='username' autocomplete="off" type="text">
+            </label>
+            <label for="">
+                <h3 id="EmailReg">Email</h3>
+                <input id="EmailRegbut" name='email' class="regInput" autocomplete="off" type="mail">
+            </label>
+            <label for="">
+                <h3 id="SenhaReg">Senha</h3>
+                <input id="SenhaRegbut" name='senha' class="regInput" autocomplete="off" type="password">
+            </label>
+            <label for="">
+                <h3 id="ConfSenhaReg">Confimação de senha</h3>
+                <input id="ConfSenhaRegbut" name='confirmacaosenha' class="regInput" autocomplete="off" type="password">
+            </label>
+            <label for="">
+                <button id="dirBotao" class="botao" type="submit"><img src="img/register.png" alt=""> <h4 class="tituloBotao"> Cadastre-se</h4></button>
+            </label>
+        </div>
+    </div>
+    <script src="js/LoginRegistrese/tempoDeAnimacao.js"></script>
+    <script src="js/LoginRegistrese/eventos.js"></script>
+    <script src="js/LoginRegistrese/validaFomulario.js"></script>

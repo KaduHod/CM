@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashManager</title>
+    <link rel="stylesheet" href="css/home/header.css">
+    <link rel="stylesheet" href="css/home/MiddleContent.css">
+    <link rel="stylesheet" href="css/home/menu.css">
+    <link rel="stylesheet" href="css/botao.css">
+    <link rel="stylesheet" href="css/vars.css">
+    <link rel="stylesheet" href="css/home/screen.css">
+     
+</head>
+<body>
+    <header>
+        <h1>Cash Manager</h1>
+        
+        <ul id="menuItems">
+            <li id="item1" >
+                <!-- onclick="mudaText('item1')" -->
+                Sobre
+            </li>
+            
+           
+            <li id="item2" >
+                <!-- onclick="mudaText('item2')" -->
+                Funções
+            </li>
+            
+            
+        </ul>
+        
+        <div id="mobileMenu" onclick="menu('fora')" >
+            <div id="menuMobileFlex">   
+                <div class="traço">
+
+                </div>
+                <div class="traço2">
+    
+                </div>
+                <div class="traço">
+    
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    
+    <div id="MiddleContentContainer" >
+        <div id="MiddleContent">
+            <div id="MiddleContentLogo">
+                <img id="ImagemLogo" src="img/novoLayoutLOGO2.png" alt="">
+            </div>
+            <div id="MiddleContentTittle">
+                <h1> <span>#</span> Organizador financeiro</h1>
+            </div>
+            <div id="MiddleContentText">
+                <p id="TextoMiddleContent">Cash manager é um aplicativo web que tem o objetivo de ajudar a sua organização financeira, dando uma vizualização mais clara com graficos e tabelas de todas as suas fontes de renda e gastos!</p>
+            </div>
+            <form action='/CadastroLogin' method="post" id="MiddleContentButtons">
+               
+                <label for="">  
+                    <button class="botao" type="submit"><img src="img/enter.png" alt=""><h4>Entrar</h4> </button>
+                </label>
+                <!-- <label for="">
+                    <button class="botao" type="submit" >Registre-se</button>
+                </label> -->
+
+                
+                <!-- <a class="botao" href="">Login</a>
+                <a class="botao" href="">Registre-se</a> -->
+            </form>
+        </div>
+        
+    </div>
+    <div id="menu">
+        <div id="menuFlex">
+            <ul>
+                <div id="homeContainer"><img id='home' src="img/home.png" alt=""></div>
+                
+                <li id="item1Menu"><img class="seta" src="img/proximo.png" alt="">  Sobre <img class="icone" src="img/about.png" alt=""></li>
+                <li id="item2Menu"> <img class="seta" src="img/proximo.png" alt="">Funções <img class="icone"  src="img/function.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/home/Eventos.js"></script>
+</body>
+
+</html>
