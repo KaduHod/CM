@@ -40,7 +40,7 @@ function eventos(){
                 
                 if(verificaçãoInputs){
                     
-                    let possoDarSubmit = verificaValidacao(inputsSemHtmlCollection[0].value,inputsSemHtmlCollection[1].value,inputsSemHtmlCollection[2].value,inputsSemHtmlCollection[3].value) 
+                    let possoDarSubmit = verificaValidacao(inputsSemHtmlCollection[1].value,inputsSemHtmlCollection[2].value,inputsSemHtmlCollection[3].value,inputsSemHtmlCollection[4].value) 
                     if(possoDarSubmit) formulario.submit()
                     else{
                         alert('CAMPOS PREENCHIDOS NAO VÁLIDOS!')

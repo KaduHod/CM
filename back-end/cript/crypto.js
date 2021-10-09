@@ -12,8 +12,8 @@ function deCript(textCript){
   return decipher.update(textCript, 'hex', 'utf8')
 }
 
-let teste = cript('12345')
-let deTeste = deCript('c1bc06eea03b')
+let teste = cript('Senha')
+let deTeste = deCript('a3eb5bb2f4 ')
 console.log(deTeste)
 
 module.exports = {
