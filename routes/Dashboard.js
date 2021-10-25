@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const mysql = require('../back-end/db/mysql/teste')
+const cript = require('../back-end/cript/crypto')
 
 router.post('/', async (req, res)=>{
     let formulario = {
@@ -10,13 +11,14 @@ router.post('/', async (req, res)=>{
     try {
         let query = await mysql.SelectUser(formulario)
         if(query[0][0] == undefined) {
-            
-            console.log('Usuario nao encontrado')
-            res.send('deu ruim')  
+            res.send(`Usuario ñ Encontrao!`, )  
         }else{
-            res.render('Dashboard',{User:query[0][0]})
-            console.log('Usuario encontrado')
-                  
+            if(cript.verificacaoSenhaComDB(formulario.senha, query[0][0].senha)){
+                res.render('DashboardInicial', {User:query[0][0]})
+                console.log('Usuario encontrado')
+            }else{
+                res.render('loginRegistrese')
+            }           
         } 
     } catch (error) {
         console.log(error)

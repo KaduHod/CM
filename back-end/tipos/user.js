@@ -18,6 +18,10 @@ class User{
     this.estudos = obj.estudos 
     this.fundoDeEmergencia = obj.fundoDeEmergencia
     this.planejamento = null
+    // Adicionar valor da média de gastos por dia registrado!
+    // Média de gastos com compras diarias, como pão, queijo, credito (Gastos não registrados)
+    // Somar esses valores e ter o valor total no mes
+    // criar dado que junta gastos essenciais (gastos registrados) e gastos diarios (gastos não registrados).
     this.setTotGastos()
     this.setTotRenda()
     this.setPlanejamento()
@@ -93,7 +97,7 @@ let req_ = {
     {nome: 'Internet', valor: 270, essencial: true, mensal: true},
     {nome: 'Imposto', valor: 155, essencial: true, mensal: true},
   ],
-  fundoDeEmergencia: 000,
+  fundoDeEmergencia: 9000,
   listaRendas: [
     {nome: 'Studio N Fit',valor: 600},
     {nome: 'Axie infinity',valor: 2000}
@@ -103,8 +107,8 @@ let req_ = {
     {nome: 'Edução fisica', situação: true}
   ]
 }
- /* let new_user = new User(req_)
- console.log('========\n \n \n')
+ let new_user = new User(req_)
+console.log('========\n \n \n')
 console.log('Nome: ' + new_user.nome + '\n' +"Login: "+ new_user.login + '\n' +'Senha: ' + new_user.pwd + '\n' +'Email: '+ new_user.mail)
 console.log('User campos \n')
 console.log(new_user.rendas)
@@ -116,6 +120,9 @@ console.log('========\n')
 console.log(new_user.planejamento) 
 console.log('========\n')
 console.log(new_user.fundoDeEmergencia) 
- */
+
+console.log('========================\n \n \n \n \n \n \n===================================')
+console.log(new_user)
+
 
 module.exports = User

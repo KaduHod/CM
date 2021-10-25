@@ -1,8 +1,19 @@
+
+@font-face {
+    font-family: Titulo;
+    src: url('../Fontes/Ubuntu-Bold.ttf') format('opentype');
+    font-family: Titulo2;
+    src: url('../Fontes/Ubuntu-Light.ttf') format('opentype');
+}
 :root{
     --vermelho:#87363e;
     --vermelhoTranparente:#8a1824e7;
-    --vermelhoMaisEscuro:#572328;
+    --vermelho2:#8a1823;
+    --vermelho2transparente:#8a1823d3;
+    --vermelhoMaisEscuro:#301114;
+    --vermelhoMaisEscuro2:#47191e;
     --vermelhoMaisEscuroTransparente:#331417c4;
-    --fontePadrao: 'titulo2';
-    --cinza :rgba(138, 138, 138, 0.507);
+    --fontePadrao: 'Titulo2';
+    --cinza : rgba(255, 255, 255, 0.507);
 }
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');

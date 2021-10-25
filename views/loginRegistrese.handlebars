@@ -1,19 +1,151 @@
-<link rel="stylesheet" href="css/RegistroLogin/card.css">
-<link rel="stylesheet" href="css/botao.css">
-<link rel="stylesheet" href="css/vars.css">
-<link rel="stylesheet" href="css/RegistroLogin/screen.css">
-<div id="card">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/RegistroLogin/card.css">
+    <link rel="stylesheet" href="css/botao.css">
+    <link rel="stylesheet" href="css/vars.css">
+    <link rel="stylesheet" href="css/RegistroLogin/screen.css">
+    <style>
+    #erro{
+        /*visibility: collapse;*/
+        
+        
+        
+        width: 0px;
+        height: 298px;
+        content: '';
+        
+        display: block;
+        position: absolute;
+        top: 50%;
+        margin-top: -150px;
+        border-radius: 5px;
+        background-color: var(--vermelho2);
+        z-index: 4;
+    }
+    #ErroContainer{
+        
+        border-radius: 5px;
+        display: flex;
+        flex-direction:column ;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: space-around;
+        list-style-type: disc;
+        
+    
+    }
+    #ErroContainer li{
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: rgba(255, 255, 255, 0);
+        animation: textErro 100ms 000ms cubic-bezier(0.55, 0.055, 0.675, 0.19)  forwards;
+    }
+    .AnimacaoDivErro{
+        animation: AnimacaoDivErro 300ms cubic-bezier(0.175, 0.885, 0.32, 1.175) forwards;
+    }
+    @keyframes textErro{
+        to{
+            color: white;
+        }
+    }
+    @keyframes AnimacaoDivErro {
+        
+        to{
+            
+            visibility: visible;
+            border: 1px solid rgb(207, 207, 207);
+            width: 150px;
+        }
+    }
+    
+    @media only screen and (max-width:1093px) {
+        @keyframes AnimacaoDivErro {
+            to{
+                
+                visibility: visible;
+                border: 1px solid rgb(207, 207, 207);
+                width: 280px;
+            }
+        }
+        .cardItem{
+            flex: 1;
+            height: 100%;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+
+    }
+    @media only screen and (max-width:700px){
+        html{
+            overflow-y: hidden;
+        }
+        #erroContainer{
+            border-radius: none;
+            flex-direction: row;
+        }
+        @keyframes AnimacaoDivErro {
+            to{
+                
+                visibility: visible;
+                border: 1px solid rgb(207, 207, 207);
+                width: 80%;
+            }
+        }
+        #erro{
+            /*visibility: collapse;*/
+            width: 0px;
+            height: 100px;
+            content: '';
+            
+            display: block;
+            position: absolute;
+            top: 50%;
+            margin-top: -80px;
+            margin-left: -40%;
+            left: 50%;
+            border-radius: 5px;
+            background-color: var(--vermelho2);
+            z-index: 4;
+        }
+        .reg{
+            margin-top: 5px;
+        }
+    }
+    button:active{
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.829);
+        transform: scale(.95);
+    }
+    
+    
+</style>
+</head>
+<body>
+    <div id="card">
         <form action="/Dashboard" method='post' class="cardItem" id="Login">
             <label id="labelTituloEsq" for="">
                 <h1>LOGIN</h1>
             </label>
             
             <label for="">
-                <h3 id="UsernameLog">Nome de usúario</h3>
+                <h3 id="UsernameLog" class="log">Nome de usúario</h3>
                 <input id="UsernameLogbut" name='username' class="logInput" autocomplete="off" type="text">
             </label>
             <label for="">
-                <h3 id="SenhaLog">Senha</h3>
+                <h3 id="SenhaLog" class="log">Senha</h3>
                 <input id="SenhaLogbut" name='senha' class="logInput" autocomplete="off" type="password">
             </label>
             <label for="">
@@ -25,24 +157,24 @@
             <label id="labelTituloDir" for="">
                 <h1>CADASTRO</h1>
             </label>
-            <label for="">
-                <h3 id="NomeReg">Nome ou apelido</h3>
-                <input id="NomeRegbut" class="regInput" name='nome' autocomplete="off" type="text">
+            <label for="" >
+                <h3 id="NomeReg" class="reg" >Nome ou apelido</h3>
+                <input id="NomeRegbut" class="regInput"  name='nome' autocomplete="off" type="text">
             </label>
-            <label for="">
-                <h3 id="UsernameReg">Nome de usúario</h3>
-                <input id="UsernameRegbut" class="regInput" name='username' autocomplete="off" type="text">
+            <label for="" >
+                <h3 id="UsernameReg" class="reg" >Nome de usúario</h3>
+                <input id="UsernameRegbut" class="regInput "  name='username' autocomplete="off" type="text">
             </label>
-            <label for="">
-                <h3 id="EmailReg">Email</h3>
+            <label for="" >
+                <h3 id="EmailReg" class="reg">Email</h3>
                 <input id="EmailRegbut" name='email' class="regInput" autocomplete="off" type="mail">
             </label>
-            <label for="">
-                <h3 id="SenhaReg">Senha</h3>
+            <label for="" >
+                <h3 id="SenhaReg" class="reg">Senha</h3>
                 <input id="SenhaRegbut" name='senha' class="regInput" autocomplete="off" type="password">
             </label>
-            <label for="">
-                <h3 id="ConfSenhaReg">Confimação de senha</h3>
+            <label for="" >
+                <h3 id="ConfSenhaReg" class="reg">Confimação de senha</h3>
                 <input id="ConfSenhaRegbut" name='confirmacaosenha' class="regInput" autocomplete="off" type="password">
             </label>
             <label for="">
@@ -50,6 +182,16 @@
             </label>
         </div>
     </div>
+    <div id="erro" >
+        <ul id="ErroContainer">
+            
+        </ul>
+    </div>
+    
     <script src="js/LoginRegistrese/tempoDeAnimacao.js"></script>
     <script src="js/LoginRegistrese/eventos.js"></script>
     <script src="js/LoginRegistrese/validaFomulario.js"></script>
+</body>
+</html>
+
+

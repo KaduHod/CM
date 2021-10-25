@@ -14,18 +14,20 @@ const handlebars = require('express-handlebars')
   app.use(express.static(path.join(__dirname + '/static/public/')))
   app.use(bodyParser.urlencoded({extended:false}))
   app.use(bodyParser.json())
+  
 
   // view engine setup
     app.set('views', path.join(__dirname, 'views'));
     // app.engine('html', require('ejs').renderFile);
     //app.engine('handlebars',handlebars())
     app.engine('handlebars', handlebars({defaultLayout: 'main'}))
-    app.set('view engine', 'handlebars');
+    app.set('view engine', 'handlebars')
+    
     
     
 
 app.get('/', async(req, res)=>{
-  let senhaTeste = criptografia.cript('123456')
+  
 
   /* let req_ = {
   nome: 'Carlos Alberto Ribas Junior',

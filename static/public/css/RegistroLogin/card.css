@@ -1,10 +1,9 @@
 #card{
-    width: 80%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     display: flex;
     /* border: 1px solid rgb(138, 138, 138); */
-    border-radius: 4px;
-    border-radius: 10px;
+   
     
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.452);
     background-color: rgba(255, 255, 255, 0);
@@ -14,10 +13,32 @@
     
     
 }
+.InputErro::after{
+    content: 'X';
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    transform: translate(60px, 2px) ;
+    z-index: 3;
+    right: 0;
+    color: rgba(73, 2, 2, 0);
+    text-align: center;
+    text-justify: center;
+    animation: AnimacaoX 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    
+}
+@keyframes AnimacaoX {
+    to{
+        transform: translate(-20px, 2px) ;
+        color: rgba(73, 2, 2);
+    }
+}
 @keyframes cardAnimation {
     to{
         transform: translateY(0px);
-        background-color: var(--vermelhoTranparente);
+        background-color: var(--vermelho2);
         box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.452);
     }
     
@@ -59,6 +80,11 @@
 #Registro label{
     /* transform: translateX(101vw); */
 }
+@media only screen and (max-width:700px) {
+    #RegistroTelaPequena{
+        margin-top: 30px;
+    }
+}
 
 
 label input{
@@ -92,11 +118,13 @@ label h3{
     height: 50px;
     cursor: pointer;
     animation: textAnimation 500ms ease-in 1300ms forwards;
+    z-index: 2;
 }
 .h3EmBaixo{
     transform: translateY(-30px);
     font-size: 19px;
     text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.055);
+    z-index: 2;
 }
 
 textarea:focus, input:focus, select:focus {

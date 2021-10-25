@@ -33,7 +33,7 @@ async function teste(){
 
 async function SelectUser(user){
     const conn = await conectaDB()
-    const rows = conn.query(`Select * from usuarios where username = '${user.username}' and senha = '${user.senha}'`) // função de query na db 
+    const rows = conn.query(`Select * from usuarios where username = '${user.username}'`) // função de query na db 
     return await rows; // retorno da query (array com usuarios no indice 0)
 }
 async function InsertUser(novoUsuario){
@@ -42,6 +42,9 @@ async function InsertUser(novoUsuario){
         (?),        (?),        (?),        (?)    )`
         const values = [novoUsuario.nome, novoUsuario.username, novoUsuario.email, novoUsuario.senha]
     const rows = conn.query(sql,values)
+    setTimeout(()=>{
+        console.log(rows[0])
+    }, 10000)
     return await rows
 }
 

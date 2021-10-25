@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
     
     
     animation: botaoAnimation 400ms cubic-bezier(0.175, 0.885, 0.32, 1.2) 1900ms forwards;
@@ -56,6 +56,7 @@
     
     animation: botaoBefore 200ms ease-in-out 0ms forwards;
 }
+
 @keyframes botaoBefore {
     to{
         width: 185px;
@@ -63,8 +64,8 @@
     }
 }
 .botao:hover{
-    transform: scale(1.1);
-    
+    -webkit-transform: scale(0.9);
+    -moz-transform:scale(0.9) ;
     border: 0px solid rgb(255, 255, 255);
     
     
@@ -75,9 +76,9 @@
     border: 0px solid rgb(255, 255, 255);
 }
 .botao:active{
-    transform: scale(0.90);
+    transform: scale(1.1);
     background-color: var(--vermelhoMaisEscuro);
-    border: 2px solid rgb(255, 255, 255);
+    
 }
 .botao img{
     width: 30px;
@@ -108,4 +109,5 @@
 button h4{
     z-index: 3;
     font-weight: normal;
+    
 }

@@ -43,7 +43,6 @@ class gasto{
           while (auxiliar.ponteiro.nome != nomeGasto) {
             auxiliar = auxiliar.ponteiro
           }
-
           if(auxiliar.ponteiro.nome == nomeGasto){
             if(auxiliar.ponteiro.ponteiro){
               auxiliar.ponteiro = auxiliar.ponteiro.ponteiro
