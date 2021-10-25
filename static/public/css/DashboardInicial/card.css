@@ -1,0 +1,205 @@
+.cardDashBoardInicial{
+    width: fit-content;
+    padding: 10px;
+    height: 200px;
+    border-radius: 8px;
+    border: 2px solid var(--cinza);
+    display: flex;
+    content: '';
+    margin: 10px 10px 10px 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--vermelhoMaisEscuro);
+    
+}
+.cardDashBoardInicialADD{
+    width: fit-content;
+    padding: 10px;
+    height: 200px;
+    border-radius: 8px;
+    background-color: var(--vermelhoMaisEscuro);
+    border: 2px solid var(--cinza);
+    display: flex;
+    content: '';
+    margin: 10px 10px 10px 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateY(-300%);
+    animation: moveCard 400ms cubic-bezier(0.175, 0.885, 0.32, 1.075) 100ms forwards;
+    
+}
+@keyframes moveCard {
+    to{
+        transform: translateY(0);
+    }
+}
+.labelCard{
+    display: flex;
+}
+.labelCard input{
+    background-color: transparent;
+    width: 130px;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    border-bottom: 1px solid var(--cinza);
+    color: white;
+    font-family: 'Ubunto',sans-serif;
+}
+.ContentInner::-webkit-scrollbar{
+    width: 4px;
+    
+    margin-left: 5px;
+    
+}
+.ContentInner::-webkit-scrollbar-track{
+    
+}
+.ContentInner::-webkit-scrollbar-thumb{
+    border-radius: 2px;
+    width: 2px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.adicionar{            
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    animation: giraMais 000ms linear 00ms forwards;
+}
+.adicionarGastos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    animation: giraMais 000ms linear 00ms forwards;
+}
+.adicionarGastos::before{
+    height: 45px;
+    width: 5px;
+    background-color: white;
+    position:absolute;
+    content: '';
+    border-radius: 3px;
+    display: block;
+}
+.adicionarGastos::after{
+    display: block;
+    height: 5px;
+    width: 45px;
+    background-color: white;
+    position: absolute;
+    content: '';
+    border-radius: 3px;
+    
+}
+@keyframes giraMais {
+    to{
+        transform: rotate(360deg);
+    }
+}
+.adicionar::before{
+    height: 45px;
+    width: 5px;
+    background-color: white;
+    position:absolute;
+    content: '';
+    border-radius: 3px;
+    display: block;
+    
+    
+}
+.adicionar::after{
+    display: block;
+    height: 5px;
+    width: 45px;
+    background-color: white;
+    position: absolute;
+    content: '';
+    border-radius: 3px;
+    
+}
+.adicionarX{
+    animation: adicionarX 500ms ease-in-out 100ms forwards;
+}
+.adicionarMais{
+    animation:adicionarMais 500ms ease-in-out 100ms forwards;
+}
+.adicionarX::after{
+    height: 5px;
+    width: 45px;
+    background-color: rgb(196, 2, 2);
+    position: absolute;
+    content: '';
+    border-radius: 3px;
+    transition: 300ms linear;
+    
+}
+.adicionarX::before{
+    height: 45px;
+    width: 5px;
+    background-color: rgb(196, 2, 2);
+    position: absolute;
+    content: '';
+    border-radius: 3px;
+    transition: 300ms linear;
+    
+    
+}
+.adicionarMais::before{
+    height: 45px;
+    width: 5px;
+    background-color: white;
+    position: absolute;
+    content: '';
+    border-radius: 3px;
+    transition: 300ms linear;
+    
+}
+.adicionarMais::after{
+    height: 5px;
+    width: 45px;
+    background-color: white;
+    position: absolute;
+    content: '';
+    border-radius: 3px;
+    transition: 300ms linear;
+    
+}
+@keyframes adicionarX {
+    to{
+        transform: rotate(225deg);
+        
+    }
+}
+@keyframes adicionarMais {
+    to{
+        transform: rotate(0deg);
+        
+    }
+}
+
+@media only screen and(max-width:1200px) {
+    .ContentInner{
+        padding-right: 150px;
+    }
+}
+@media only screen and(max-width:1000px) {
+    .ContentInner{
+        width: 90%;
+        padding-right: 150px;
+    }
+}
+@media only screen and(max-width:800px) {
+    .ContentInner{
+        width: 100%;
+        padding-right: 150px;
+    }
+}

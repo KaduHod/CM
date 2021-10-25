@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/DashboardInicial/Content.css">
     <link rel="stylesheet" href="/css/botao.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/css/DashboardInicial/card.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <style>
@@ -52,21 +53,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            
-            
         }
         .botaov2{
             padding: 5px;
         }
         #botaoGeral{
             border: 1px solid rgba(255, 255, 255);
-            
             padding: 10px;
             cursor: pointer;
             border-radius: 5px;
             background-color: var(--vermelhoMaisEscuro);
             transition: 200ms ease-in;
-            
         }
         #botaoGeral:hover{
             transform: scale(1.1);
@@ -84,170 +81,26 @@
             display: flex;
             overflow-y: scroll;
             flex-wrap: wrap;
-            
         }
-        .cardDashBoardInicial{
-            width: fit-content;
-            padding: 10px;
-            height: 200px;
-            border-radius: 8px;
-            border: 2px solid var(--cinza);
-            display: flex;
-            content: '';
-            margin: 10px 10px 10px 10px;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            
-        }
-        .cardDashBoardInicialADD{
-            width: fit-content;
-            padding: 10px;
-            height: 200px;
-            border-radius: 8px;
-            border: 2px solid var(--cinza);
-            display: flex;
-            content: '';
-            margin: 10px 10px 10px 10px;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            transform: translateY(-300%);
-            animation: moveCard 400ms cubic-bezier(0.175, 0.885, 0.32, 1.075) 100ms forwards;
-            
-        }
-        @keyframes moveCard {
-            to{
-                transform: translateY(0);
+        @media only screen and(max-width:1200px) {
+            .ContentInner{
+                width: 80%;
+                height: 100%;
+                min-height: 100%;
+                padding: 10px 3px 10px 0px ;
+                display: flex;
+                overflow-y: scroll;
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
-        .labelCard{
-            display: flex;
-        }
-        .labelCard input{
-            background-color: transparent;
-            width: 200px;
-            box-shadow: 0 0 0 0;
-            border: 0 none;
-            outline: 0;
-            border-bottom: 1px solid var(--cinza);
-            color: white;
-            font-family: 'Ubunto',sans-serif;
-        }
-        .ContentInner::-webkit-scrollbar{
-            width: 4px;
-            
-            margin-left: 5px;
-            
-        }
-        .ContentInner::-webkit-scrollbar-track{
-            
-        }
-        .ContentInner::-webkit-scrollbar-thumb{
-            border-radius: 2px;
-            width: 2px;
-            height: 10px;
-            background-color: rgb(255, 255, 255);
-        }
-        .adicionar{            
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            height: 45px;
-            width: 45px;
-            animation: giraMais 000ms linear 00ms forwards;
-        }
-        @keyframes giraMais {
-            to{
-                transform: rotate(360deg);
-            }
-        }
-        .adicionar::before{
-            height: 45px;
-            width: 5px;
-            background-color: white;
-            position:absolute;
-            content: '';
-            border-radius: 3px;
-            display: block;
-            
-            
-        }
-        .adicionar::after{
-            display: block;
-            height: 5px;
-            width: 45px;
-            background-color: white;
-            position: absolute;
-            content: '';
-            border-radius: 3px;
-            
-        }
-        .adicionarX{
-            animation: adicionarX 500ms ease-in-out 100ms forwards;
-        }
-        .adicionarMais{
-            animation:adicionarMais 500ms ease-in-out 100ms forwards;
-        }
-        .adicionarX::after{
-            height: 5px;
-            width: 45px;
-            background-color: rgb(196, 2, 2);
-            position: absolute;
-            content: '';
-            border-radius: 3px;
-            transition: 300ms linear;
-            
-        }
-        .adicionarX::before{
-            height: 45px;
-            width: 5px;
-            background-color: rgb(196, 2, 2);
-            position: absolute;
-            content: '';
-            border-radius: 3px;
-            transition: 300ms linear;
-            
-            
-        }
-        .adicionarMais::before{
-            height: 45px;
-            width: 5px;
-            background-color: white;
-            position: absolute;
-            content: '';
-            border-radius: 3px;
-            transition: 300ms linear;
-            
-        }
-        .adicionarMais::after{
-            height: 5px;
-            width: 45px;
-            background-color: white;
-            position: absolute;
-            content: '';
-            border-radius: 3px;
-            transition: 300ms linear;
-            
-        }
-        @keyframes adicionarX {
-            to{
-                transform: rotate(225deg);
-                
-            }
-        }
-        @keyframes adicionarMais {
-            to{
-                transform: rotate(0deg);
-                
-            }
-        }
+        
         .avançar{
             width: fit-content;
             padding: 8px;
-            background-color: green;
+            background-color: var(--vermelhoMaisEscuro);
             margin: 10px;
+            border: 2px solid var(--cinza);
             border-radius: 4px 20px 20px 4px;
             text-align: center;
             transition: 200ms ease-in-out;
@@ -268,6 +121,12 @@
                 padding: 8px;
             }
         }
+        .checkbox{
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+        }
+        
     </style>
     
 </head>
@@ -278,12 +137,11 @@
                 <li class="LiMenu activeLi" id="Li0"> <span><img class="imgMenuTopo imagemMenuActive" src="/img/userVermelho.png" alt=""></span> </li>
                 <li class="LiMenu" id="Li1"> <span><img class="imgMenuTopo" src="/img/RendasIcone.png" alt=""></span> </li>
                 <li class="LiMenu" id="Li2"> <span><img class="imgMenuTopo" src="/img/GastosIcone.png" alt=""></span> </li>
-                <li class="LiMenu" id="Li3"> <span><img class="imgMenuTopo" src="/img/EstudosIcone.png" alt=""></span></li>
+                {{!-- <li class="LiMenu" id="Li3"> <span><img class="imgMenuTopo" src="/img/EstudosIcone.png" alt=""></span></li> --}}
             </ul>
         </div>
     </div>
     <form  id="ContentContainer">
-        
         <div class="Content active" id="Geral">
             <div class="ContentFlex AnimationContent" id="GeralFlex" >
                 <h1>Bem vindo 
@@ -296,8 +154,7 @@
                     <h4>Clique aqui para cadastrar os seus gastos</h4> 
                 </div>
             </div>
-        </div>
-        
+        </div>bn 
         <div class="Content" id="Rendas">
             <div class="avançar" id='anvançarRendas'>Confirmar rendas e avançar para gastos</div>
             <div class="ContentFlex"  id="RendasFlex">
@@ -313,35 +170,45 @@
                         </label>
                         <div class="adicionar"></div>
                     </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                 </div>
             </div>
             
         </div>
         <div class="Content  " id="Gastos">
+            <div class="avançar" id='anvançarGastos'>Confirmar gastos e avançar para estudos</div>
             <div class="ContentFlex"  id="GastosFlex">
-                <h1>Gastos</h1>
-                <div id="card">Listagem das gastos e informações mais detalhasdas sobre as fontes de gastos</div>
+                <div class="ContentInner" id="GastosInner" >
+                    <div class="cardDashBoardInicial" >
+                        <label class="labelCard" for="">
+                            <h4>Nome do gasto</h4> &nbsp;
+                            <input type="text" >
+                        </label>
+                        <label class="labelCard"  for="">
+                            <h4>Valor do gasto</h4> &nbsp;
+                            <input type="number">  
+                        </label>
+                        <label for="" class="labelCard">
+                            <h4>Essencial</h4>&nbsp;
+                            <input class="checkbox" type="checkbox">
+                        </label>
+                        <label for="" class="labelCard">
+                            <h4>Mensal</h4>&nbsp;
+                            <input class="checkbox" type="checkbox">
+                        </label>
+                        <div class="adicionarGastos"></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="Content " id="Estudos">
+        {{!-- <div class="Content " id="Estudos">
             <div class="ContentFlex"  id="EstudosFlex">
                 <h1>Estudos</h1>
                 <div>FODASE</div>
             </div>
-        </div>      
+        </div>       --}}
         
     </form>     
     <script src="/js/DashboardInicial/Eventos.js"></script>
+    <script src="/js/DashboardInicial/funcoesCards.js"></script>
 </body>
 </html>
