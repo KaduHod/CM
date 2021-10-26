@@ -77,17 +77,19 @@
             width: 80%;
             height: 100%;
             min-height: 100%;
-            padding: 10px 3px 10px 0px ;
+            padding: 10px 3px 130px 0px ;
             display: flex;
             overflow-y: scroll;
             flex-wrap: wrap;
+            justify-content: center;
+            
         }
         @media only screen and(max-width:1200px) {
             .ContentInner{
                 width: 80%;
                 height: 100%;
                 min-height: 100%;
-                padding: 10px 3px 10px 0px ;
+                padding: 10px 3px 130px 0px ;
                 display: flex;
                 overflow-y: scroll;
                 flex-wrap: wrap;
@@ -107,18 +109,15 @@
             cursor: pointer;
         }
         .avançar:hover{
-            animation: avançarAnimation .8s ease-in-out infinite;
+            animation: avançarAnimation .2s ease-in-out forwards;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.466);
         }
         @keyframes avançarAnimation {
             0%{
                 padding: 8px;
             }
-            50%{
-                padding: 8px 8px 8px 30px;
-            }
             100%{
-                padding: 8px;
+                padding: 8px 8px 8px 30px;
             }
         }
         .checkbox{
@@ -126,7 +125,17 @@
             height: 20px;
             border-radius: 10px;
         }
-        
+        @media only screen and (max-width: 600px) {
+            .cardDashBoardInicial{
+                flex-direction: column;
+            }
+            .labelCard{
+                display: flex;
+                flex-direction: column;
+            }
+
+        }
+                
     </style>
     
 </head>
@@ -141,7 +150,7 @@
             </ul>
         </div>
     </div>
-    <form  id="ContentContainer">
+    <form action="/CadastroLogin/ValidaFormNovoUser" method="post" id="ContentContainer">
         <div class="Content active" id="Geral">
             <div class="ContentFlex AnimationContent" id="GeralFlex" >
                 <h1>Bem vindo 
@@ -161,7 +170,7 @@
                 <div class="ContentInner" id="RendasInner" >
                     <div class="cardDashBoardInicial" >
                         <label class="labelCard" for="">
-                            <h4>Nome da renda</h4> &nbsp;
+                            <h4 class="tituloCard">Nome da renda</h4> &nbsp;
                             <input type="text" >
                         </label>
                         <label class="labelCard"  for="">
@@ -175,7 +184,8 @@
             
         </div>
         <div class="Content  " id="Gastos">
-            <div class="avançar" id='anvançarGastos'>Confirmar gastos e avançar para estudos</div>
+        
+            <button type="submit" class="avançar" id='anvançarGastos'>Confirmar gastos e avançar para estudos</button>
             <div class="ContentFlex"  id="GastosFlex">
                 <div class="ContentInner" id="GastosInner" >
                     <div class="cardDashBoardInicial" >

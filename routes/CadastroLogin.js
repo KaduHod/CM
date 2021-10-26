@@ -25,4 +25,7 @@ router.post('/NovoUser', (req, res)=>{
     
     
 })
+router.post('/ValidaFormNovoUser', (req, res)=>{
+    console.log(req.body)
+})
 module.exports = router

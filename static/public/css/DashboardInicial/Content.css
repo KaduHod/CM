@@ -12,8 +12,8 @@
 }
 .active{
     visibility: visible;
-    
 }
+
 @keyframes Content {
     to{
         transform: translateY(0px);

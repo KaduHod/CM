@@ -38,9 +38,10 @@
 .labelCard{
     display: flex;
 }
+
 .labelCard input{
     background-color: transparent;
-    width: 130px;
+    width: 200px;
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
