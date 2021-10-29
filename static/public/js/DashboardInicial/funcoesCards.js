@@ -42,26 +42,26 @@ function removeCardGastos(el){
     console.log(el)
     GastosInner.removeChild(GastosInner.lastChild)
 }
-var countGastos = 0
+var countGastos = 1
 function criaCardGastos(){
     let novoCard = document.createElement('div')
     novoCard.classList.add('cardDashBoardInicialADD')
 
     let labelNome = document.createElement('div')
     labelNome.classList.add('labelCard')
-    labelNome.innerHTML = `<h4>Nome do gasto</h4> &nbsp; <input name='GastoInputNome${countGastos}' type='text' > `
+    labelNome.innerHTML = `<h4>Nome do gasto</h4> &nbsp; <input required="required" name='GastoInputNome${countGastos}' type='text' > `
    
     let labelValor = document.createElement('div')
     labelValor.classList.add('labelCard')
-    labelValor.innerHTML = `<h4>Valor do gasto</h4> &nbsp;<input name='GastoInputValor${countGastos}' type='number'>`
+    labelValor.innerHTML = `<h4>Valor do gasto</h4> &nbsp;<input required="required" name='GastoInputValor${countGastos}' type='number'>`
    
     let labelEssencial = document.createElement('div')
     labelEssencial.classList.add('labelCard')
-    labelEssencial.innerHTML = `<h4>Essencial</h4> &nbsp; <input name='GastoInputEssencial${countGastos}' type='checkbox'>`
+    labelEssencial.innerHTML = `<h4>Essencial</h4> &nbsp; <input class='checkbox' name='GastoInputEssencial${countGastos}' type='checkbox'>`
     
     let labelMensal = document.createElement('div')
     labelMensal.classList.add('labelCard')
-    labelMensal.innerHTML = `<h4>Mensal</h4> &nbsp; <input name='GastoInputMesal${countGastos}' type='checkbox'>`
+    labelMensal.innerHTML = `<h4>Mensal</h4> &nbsp; <input class='checkbox' name='GastoInputMesal${countGastos}' type='checkbox'>`
     countGastos++
     let adicionarGastos = document.createElement('div')
     adicionarGastos.classList.add('adicionarGastos')
@@ -87,18 +87,18 @@ function botarClassAdicionaX(el){
     })
     el.style.transform = 'rotate(0deg)'
 }
-var count = 0
+var count = 1
 function criaCard(){
     let novoCard = document.createElement('div')
     novoCard.classList.add('cardDashBoardInicialADD')
 
     let labelNome = document.createElement('div')
     labelNome.classList.add('labelCard')
-    labelNome.innerHTML = ` <h4>Nome da renda</h4> &nbsp; <input name='RendaInputNome${count}' type='text' > `
+    labelNome.innerHTML = ` <h4>Nome da renda</h4> &nbsp; <input required="required" name='RendaInputNome${count}' type='text' > `
     
     let labelValor = document.createElement('div')
     labelValor.classList.add('labelCard')
-    labelValor.innerHTML = `<h4>Valor da renda</h4> &nbsp;<input name='RendaInputValor${count}' type='number'>`
+    labelValor.innerHTML = `<h4>Valor da renda</h4> &nbsp;<input required="required" name='RendaInputValor${count}' type='number'>`
     count++
     let adicionar = document.createElement('div')
     adicionar.classList.add('adicionar')

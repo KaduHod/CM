@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 const mysql = require('../back-end/db/mysql/teste')
 const cript = require('../back-end/cript/crypto')
+const form = require('../back-end/DadosUser/form')
+
 
 router.post('/', (req, res)=>{
     res.render('loginRegistrese')
@@ -26,6 +28,7 @@ router.post('/NovoUser', (req, res)=>{
     
 })
 router.post('/ValidaFormNovoUser', (req, res)=>{
-    console.log(req.body)
+    form.userCadastro(req.body)
+    
 })
 module.exports = router

@@ -165,17 +165,17 @@
             </div>
         </div>bn 
         <div class="Content" id="Rendas">
-            <div class="avançar" id='anvançarRendas'>Confirmar rendas e avançar para gastos</div>
+            <div class="avançar" id='anvançarRendas'>Avançar para gastos</div>
             <div class="ContentFlex"  id="RendasFlex">
                 <div class="ContentInner" id="RendasInner" >
                     <div class="cardDashBoardInicial" >
                         <label class="labelCard" for="">
-                            <h4 class="tituloCard">Nome da renda</h4> &nbsp;
-                            <input type="text" >
+                            <h4 class="tituloCard" >Nome da renda</h4> &nbsp;
+                            <input type="text" required="required" name='RendaInputNome0' >
                         </label>
                         <label class="labelCard"  for="">
                             <h4>Valor da renda</h4> &nbsp;
-                            <input type="number">  
+                            <input name='RendaInputValor0' required="required" type="number">  
                         </label>
                         <div class="adicionar"></div>
                     </div>
@@ -185,25 +185,25 @@
         </div>
         <div class="Content  " id="Gastos">
         
-            <button type="submit" class="avançar" id='anvançarGastos'>Confirmar gastos e avançar para estudos</button>
+            <button type="submit" style="color: white;" class="avançar" id='anvançarGastos'>Confirmar gastos e rendas</button>
             <div class="ContentFlex"  id="GastosFlex">
                 <div class="ContentInner" id="GastosInner" >
                     <div class="cardDashBoardInicial" >
                         <label class="labelCard" for="">
                             <h4>Nome do gasto</h4> &nbsp;
-                            <input type="text" >
+                            <input name='GastoInputNome0' required="required" type="text" >
                         </label>
                         <label class="labelCard"  for="">
                             <h4>Valor do gasto</h4> &nbsp;
-                            <input type="number">  
+                            <input  name='GastoInputValor0' required="required" type="number">  
                         </label>
                         <label for="" class="labelCard">
                             <h4>Essencial</h4>&nbsp;
-                            <input class="checkbox" type="checkbox">
+                            <input class="checkbox" name='GastoInputEssencial0' type="checkbox">
                         </label>
                         <label for="" class="labelCard">
                             <h4>Mensal</h4>&nbsp;
-                            <input class="checkbox" type="checkbox">
+                            <input class="checkbox" name='GastoInputMesal0' type="checkbox">
                         </label>
                         <div class="adicionarGastos"></div>
                     </div>

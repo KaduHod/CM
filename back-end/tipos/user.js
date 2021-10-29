@@ -108,7 +108,7 @@ let req_ = {
   ]
 }
  let new_user = new User(req_)
-console.log('========\n \n \n')
+/* console.log('========\n \n \n')
 console.log('Nome: ' + new_user.nome + '\n' +"Login: "+ new_user.login + '\n' +'Senha: ' + new_user.pwd + '\n' +'Email: '+ new_user.mail)
 console.log('User campos \n')
 console.log(new_user.rendas)
@@ -122,7 +122,7 @@ console.log('========\n')
 console.log(new_user.fundoDeEmergencia) 
 
 console.log('========================\n \n \n \n \n \n \n===================================')
-console.log(new_user)
+console.log(new_user) */
 
 
 module.exports = User

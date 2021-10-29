@@ -73,8 +73,4 @@ app.get('/', async(req, res)=>{
 
 app.listen(7070, ()=>{
   console.log('=== SERVIDOR RODANDO EM http://localhost:7070 ===')
-
-
-
-
 })
