@@ -61,7 +61,7 @@ function criaCardGastos(){
     
     let labelMensal = document.createElement('div')
     labelMensal.classList.add('labelCard')
-    labelMensal.innerHTML = `<h4>Mensal</h4> &nbsp; <input class='checkbox' name='GastoInputMesal${countGastos}' type='checkbox'>`
+    labelMensal.innerHTML = `<h4>Mensal</h4> &nbsp; <input class='checkbox' name='GastoInputMensal${countGastos}' type='checkbox'>`
     countGastos++
     let adicionarGastos = document.createElement('div')
     adicionarGastos.classList.add('adicionarGastos')
