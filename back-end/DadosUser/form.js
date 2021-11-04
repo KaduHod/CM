@@ -2,9 +2,10 @@ function separaValoresGastosERendasDoForm(arr){
     
     let rendas = arr.filter(retornaRendas)
     let gastos = arr.filter(retornaGastos)
+    let fundoDeEmergencia = arr.filter(retornaFundoDeEmergencia)
     let rendas2= separaCampos(rendas)
     let gastos2= separaCampos(gastos)
-    //console.log('=============')
+    console.log('=============')
     //criaListaRendas(rendas2)
     
     let rendas3 = criaListaRendas(rendas2)
@@ -13,7 +14,10 @@ function separaValoresGastosERendasDoForm(arr){
     let gastos3 = criaListaGastos(gastos2)
     console.log(gastos3)
     
+    console.log(fundoDeEmergencia)
+    
 }
+
 function separaCampos(arr){
     let ultimoIndice = arr.length-1
     let qtdCampos = ultimoChar(arr[ultimoIndice].Nome)
@@ -38,11 +42,15 @@ function ultimoChar(str) {
     return str.slice(-1)
 } 
 function retornaRendas(item){
-    if(item.Nome.indexOf('R')>-1) return true
+    if(item.Nome.indexOf('Renda')>-1) return true
         else return false
 }
 function retornaGastos(item){
-    if(item.Nome.indexOf('G')>-1) return true
+    if(item.Nome.indexOf('Gasto')>-1) return true
+    else return false
+}
+function retornaFundoDeEmergencia(item){
+    if(item.Nome.indexOf('fundoDeEmergenciaValor')>-1) return true
     else return false
 }
 function tranformaEmArrayObjetoForms(obj){

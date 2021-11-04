@@ -15,7 +15,6 @@ class User{
         listaRendas: obj.listaRendas,
         totalRenda: null
     }
-    this.estudos = obj.estudos 
     this.fundoDeEmergencia = obj.fundoDeEmergencia
     this.planejamento = null
     // Adicionar valor da média de gastos por dia registrado!
@@ -101,10 +100,6 @@ let req_ = {
   listaRendas: [
     {nome: 'Studio N Fit',valor: 600},
     {nome: 'Axie infinity',valor: 2000}
-  ],
-  estudos: [
-    {nome: 'Ánalise e desenvolvimento de sistemas', situação: false},
-    {nome: 'Edução fisica', situação: true}
   ]
 }
  let new_user = new User(req_)

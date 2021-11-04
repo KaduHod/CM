@@ -39,7 +39,7 @@
             justify-content: space-evenly;
         }
         #GeralFlex p {
-            width: 45%;
+            width: 80%;
             background-color: rgba(0, 0, 0, 0.13);
             padding: 20px;
             text-align: center;
@@ -133,7 +133,31 @@
                 display: flex;
                 flex-direction: column;
             }
+            .GeralFlex p{
+                width: 80%;
+            }
 
+        }
+        .inputPadrao{
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 0;
+            border: 0 none;
+            /* border-bottom: 1px solid var(--vermelhoMaisEscuro); */
+            border-bottom: 1px solid rgba(0, 0, 0, 0);
+            outline: 0;
+            padding: 3px;
+            color: rgb(255, 255, 255);
+            animation: inputAnimation 600ms ease-in 200ms forwards;
+        }
+        @keyframes inputAnimation {
+            to{
+                /* border-bottom: 1px solid var(--vermelhoMaisEscuro); */
+                border-bottom: 1px solid white;
+            }
+        }
+        #fundoDeEmergencia{
+            display: collapse;
         }
                 
     </style>
@@ -158,7 +182,18 @@
                         {{{Dados.nome}}}
                     {{/if}}
                 </h1>
-                <p>Para completar o seu perfil e utilizar a plataforma, vamos cadastrar seus gastos e rendas.</p>
+                <p>Antes de começarmos por favor informe se você possui um fundo de emergência. <br> (Um montante de dinheiro guardado para emergências como acidentes, desemprego e etc) <br> <br>
+                <input type="radio" id="Sim" name="FundoDeEmergênciaInputNome" value="true"> &nbsp; SIM 
+                <input type="radio" id="Não" name="FundoDeEmergênciaInputNome" value="false">&nbsp; NÃO
+                </p>
+                
+                {{!-- <div id="fundoDeEmergencia">
+                    Digite o valor guardado:
+                    <input class="inputPadrao" type="number" required='required'>
+                </div> --}}
+                
+                
+                {{!-- <p>Para completar o seu perfil e utilizar a plataforma, vamos cadastrar seus gastos e rendas.</p> --}}
                 <div class="" id="botaoGeral">
                     <h4>Clique aqui para cadastrar os seus gastos</h4> 
                 </div>
@@ -220,5 +255,6 @@
     </form>     
     <script src="/js/DashboardInicial/Eventos.js"></script>
     <script src="/js/DashboardInicial/funcoesCards.js"></script>
+    <script src="/js/DashboardInicial/fundoDeEmergencia.js"></script>
 </body>
 </html>
