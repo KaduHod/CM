@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/botao.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/css/DashboardInicial/card.css">
+    <link rel="stylesheet" href="/css/DashboardInicial/custom-radio.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <style>
@@ -21,6 +22,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Ubuntu', sans-serif;
+            transition: 500ms;
         }
         
         .imgMenuTopo{
@@ -37,6 +39,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
+            
         }
         #GeralFlex p {
             width: 80%;
@@ -178,14 +181,30 @@
         <div class="Content active" id="Geral">
             <div class="ContentFlex AnimationContent" id="GeralFlex" >
                 <h1>Bem vindo 
-                    {{#if Dados}}
-                        {{{Dados.nome}}}
+                    {{#if User}}
+                        {{{User.nome}}}                        
                     {{/if}}
+
                 </h1>
-                <p>Antes de começarmos por favor informe se você possui um fundo de emergência. <br> (Um montante de dinheiro guardado para emergências como acidentes, desemprego e etc) <br> <br>
-                <input type="radio" id="Sim" name="FundoDeEmergênciaInputNome" value="true"> &nbsp; SIM 
-                <input type="radio" id="Não" name="FundoDeEmergênciaInputNome" value="false">&nbsp; NÃO
+                
+                <p>Antes de começarmos por favor informe se você possui um fundo de emergência. <br> (Um montante de dinheiro guardado para emergências como acidentes, desemprego e etc) 
                 </p>
+                {{#if User}}
+                    <input type="hidden"  name="idDB" value="{{{User.idDB}}}">
+                    <input type="hidden"  name="nome" value="{{{User.nome}}}">
+                    <input type="hidden"  name="username" value="{{{User.username}}}">
+                    <input type="hidden"  name="senha" value="{{{User.email}}}">
+                {{/if}}
+                
+                
+                
+                <div class="custom-radio">
+                    <input type="radio" id="Sim" class="radioParao" name="FundoDeEmergênciaInputNome" value="true">
+                    <label for="Sim">Sim</label>
+                    <input type="radio" id="Não" class="radioParao" name="FundoDeEmergênciaInputNome" value="false">
+                    <label for="Não">Não</label>
+                    
+                </div>
                 
                 {{!-- <div id="fundoDeEmergencia">
                     Digite o valor guardado:
@@ -198,7 +217,7 @@
                     <h4>Clique aqui para cadastrar os seus gastos</h4> 
                 </div>
             </div>
-        </div>bn 
+        </div>
         <div class="Content" id="Rendas">
             <div class="avançar" id='anvançarRendas'>Avançar para gastos</div>
             <div class="ContentFlex"  id="RendasFlex">

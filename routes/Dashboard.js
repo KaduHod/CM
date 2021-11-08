@@ -15,6 +15,8 @@ router.post('/', async (req, res)=>{
         }else{
             if(cript.verificacaoSenhaComDB(formulario.senha, query[0][0].senha)){
                 res.render('DashboardInicial', {User:query[0][0]})
+                console.log(query[0])
+                console.log('aqui em cima!')
                 console.log('Usuario encontrado')
             }else{
                 res.render('loginRegistrese')

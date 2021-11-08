@@ -5,16 +5,10 @@ function separaValoresGastosERendasDoForm(arr){
     let fundoDeEmergencia = arr.filter(retornaFundoDeEmergencia)
     let rendas2= separaCampos(rendas)
     let gastos2= separaCampos(gastos)
-    console.log('=============')
     //criaListaRendas(rendas2)
-    
     let rendas3 = criaListaRendas(rendas2)
-    console.log(rendas3)
-    console.log('\n')
     let gastos3 = criaListaGastos(gastos2)
-    console.log(gastos3)
-    
-    console.log(fundoDeEmergencia)
+    return [rendas3,gastos3,fundoDeEmergencia]
     
 }
 
@@ -35,7 +29,7 @@ function separaCampos(arr){
 }
 function userCadastro(obj){
     arrForms = tranformaEmArrayObjetoForms(obj)
-    separaValoresGastosERendasDoForm(arrForms)
+    return separaValoresGastosERendasDoForm(arrForms)
 }
 
 function ultimoChar(str) {

@@ -30,6 +30,13 @@ async function teste(){
     }) 
     
 }
+async function SelectAllFromUsers(){
+    const conn = await conectaDB()
+    const rows = await conn.query('Select* from usuarios;')
+
+    return rows[0]
+}
+
 
 async function SelectUser(user){
     const conn = await conectaDB()
@@ -40,13 +47,28 @@ async function InsertUser(novoUsuario){
     const conn = await conectaDB()
     const sql = `INSERT INTO cashmanager.usuarios(nome,username,email,senha) values (
         (?),        (?),        (?),        (?)    )`
-        const values = [novoUsuario.nome, novoUsuario.username, novoUsuario.email, novoUsuario.senha]
-    const rows = conn.query(sql,values)
+    const values = [novoUsuario.nome, novoUsuario.username, novoUsuario.email, novoUsuario.senha]
+    const rows = conn.query(sql, values)
     setTimeout(()=>{
         console.log(rows[0])
     }, 10000)
     return await rows
 }
+async function insertGastos(id,gastos){// recebe array de gastos
+    const conn = await conectaDB()
+    let sql = `insert into gastos(nome, valor, essencial, mensal, idUser) values((?), (?), (?), (?), (?)) ;`
+    let values = [gastos.nome, gastos.valor, gastos.essencial, gastos.mensal, id]
+    const rows = conn.query(sql, values)
+    console.log(await rows)
+}
+async function insertRendas(id,rendas){// recebe array de gastos
+    console.log(id)
+    const conn = await conectaDB()
+    let sql = `insert into rendas(nome, valor, idUser) values((?), (?), (?)) ;`
+    let values = [rendas.nome, rendas.valor, id]
+    const rows = conn.query(sql, values)
+    console.log(await rows)
+}
 
 
-module.exports = {SelectUser, InsertUser}
+module.exports = {SelectUser, InsertUser, insertGastos, insertRendas, SelectAllFromUsers}

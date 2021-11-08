@@ -16,6 +16,7 @@ function temMinusculo(str){
     if(str == strUpper) return false
     else return true
 }
+
 function temMaiusculo(str){
     let strLower = str.toLowerCase()
     if(str == strLower) return false

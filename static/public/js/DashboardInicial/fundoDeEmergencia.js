@@ -2,11 +2,9 @@ function Evento(){
     let botaoSim = document.getElementById('Sim')
     let botaoNao = document.getElementById('Não')
     botaoSim.addEventListener('click',function(item){
-        console.log(botaoSim)
         Sim()
     })
     botaoNao.addEventListener('click',function(item){
-        console.log(botaoNao)
         Nao()
     })
 

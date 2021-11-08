@@ -134,6 +134,10 @@
 </style>
 </head>
 <body>
+    {{#if User}}
+        <p style="visibility: hidden;display:none" id="UsernamesJaCadastrados">{{User.username}}</p>
+        <p style="visibility: hidden;display:none" id="EmailsJaCadastrados">{{User.email}}</p>
+    {{/if}}
     <div id="card">
         <form action="/Dashboard" method='post' class="cardItem" id="Login">
             <label id="labelTituloEsq" for="">
